@@ -1,0 +1,25 @@
+## Helmet (App) image version
+image:
+  registry: {{ .ImageRegistry }}
+  repository: {{ .ImageRepository }}
+  tag: {{ .ImageTag }}
+
+## APP's resource requests and limits
+##
+resources:
+  limits: {}
+  requests: {}
+
+## Configure the ingress resource that allows you to access the
+## APP installation. Set up the URL
+##
+ingress:
+  enabled: true
+  hostname: {{ .ApplicationHostname }}
+  annotations:
+    kubernetes.io/ingress.class: {{ .KubernetesIngressClass }}
+
+replicaCount: 1
+
+autoscaling:
+  enabled: false

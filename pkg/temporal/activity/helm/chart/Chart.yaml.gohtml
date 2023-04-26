@@ -1,0 +1,11 @@
+apiVersion: v2
+name: {{ .ApplicationSlug }}
+description: A Helm chart for the {{ .ApplicationName }}
+type: application
+version: 1.0.0
+dependencies:
+  - name: helmet
+    version: 0.6.5
+    repository: https://companyinfo.github.io/helm-charts
+    import-values:
+      - defaults
